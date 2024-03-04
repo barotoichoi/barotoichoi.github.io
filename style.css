@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(48, 48, 48);
+}
+
+.heart {
+    width: 200px;
+    height: 200px;
+    background-color: #f20044;
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -15px 15px 90px #f20044;
+    animation: heart 0.6s linear infinite;
+    z-index: 0;
+}
+@keyframes heart {
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.0);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
+}
+.heart::before{
+    content: '';
+    width: 200px;
+    height: 200px;
+    background-color: #f20044;
+    position: absolute;
+    top: -50%;
+    border-radius: 50%;
+    box-shadow: -15px -15px 90px #f20044;
+}
+.heart::after{
+    content: '';
+    width: 200px;
+    height: 200px;
+    background-color: #f20044;
+    position: absolute;
+    right: -50%;
+    border-radius: 50%;
+    box-shadow: 15px 15px 90px #f20044;
+}
+
+/* style box */
+.box {
+    position: absolute;
+    height: 600px;
+    width: 1000px;
+    background-color: rgb(48, 48, 48);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+.box button {
+    padding: 5px;
+    margin-top: 20px;    
+}
